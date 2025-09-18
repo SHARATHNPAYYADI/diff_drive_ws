@@ -33,13 +33,15 @@ The work is structured into three main tasks:
 
 Deliverables
  
-- URDF/SDF files: [Robot sdf file](/diff_drive_robot_description/urdf/)
+- URDF/SDF files: [Robot sdf file](https://github.com/SHARATHNPAYYADI/diff_drive_ws/tree/develop/src/diff_drive_robot_description/urdf)
 
-- Launch files: [Bringup launch file](/diff_drive_bringup/launch/bringup.launch.py)
+- Launch files: [Bringup launch file](https://github.com/SHARATHNPAYYADI/diff_drive_ws/blob/develop/src/diff_drive_bringup/launch/bringup.launch.py)
 
-- RViz screenshots: ![Rviz](/images/rviz_with_topic.png)
+- RViz screenshots: 
 
-- TF Tree: [tf_tree](/images/tf2_tree.pdf) 
+    ![Rviz](/images/rviz_with_topic.png)
+
+- TF Tree: [tf_tree](https://github.com/SHARATHNPAYYADI/diff_drive_ws/blob/develop/src/images/tf2_tree.pdf) 
 
 - Design Considerations
 
