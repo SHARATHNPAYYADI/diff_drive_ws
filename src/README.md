@@ -38,7 +38,7 @@ Deliverables
 - Launch files: [Bringup launch file](https://github.com/SHARATHNPAYYADI/diff_drive_ws/blob/develop/src/diff_drive_bringup/launch/bringup.launch.py)
 
 - RViz screenshots: 
-    ![Rviz_screenshot](/images/rviz_with_topic.png)
+    ![Rviz_screenshot](images/rviz_with_topic.png)
 
 - TF Tree: [tf_tree](https://github.com/SHARATHNPAYYADI/diff_drive_ws/blob/develop/src/images/tf2_tree.pdf) 
 
@@ -60,7 +60,7 @@ Deliverables
 - Results
 
     Plotted all three trajectories in respective plots 
-![odom](/images/scan_matching/odom_track.png) ![Ground_Truth](/images/scan_matching/GT.png)  ![ScanMatch](/images/scan_matching/scan_pose.png)
+![odom](images/scan_matching/odom_track.png) ![Ground_Truth](images/scan_matching/GT.png)  ![ScanMatch](images/scan_matching/scan_pose.png)
 
 - Observations
 
@@ -91,7 +91,7 @@ Deliverables
     Fused trajectory shows the reduce in the drift. But still the dependency on odom and scan pose need to be tuned further
 
 - Final comparison plot: 
-    ![odom](/images/ekf_fusion/odom.png) ![Groundtruth](/images/ekf_fusion/GT.png) ![EKF_pose](/images/ekf_fusion/ekf_pose.png)
+    ![odom](images/ekf_fusion/odom.png) ![Groundtruth](images/ekf_fusion/GT.png) ![EKF_pose](images/ekf_fusion/ekf_pose.png)
 
 -  Discussion
 
