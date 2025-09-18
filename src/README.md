@@ -102,6 +102,14 @@ Deliverables
 ## Setup
 This section gives the breif setup instruction
 
+```bash
+git clone git@github.com:SHARATHNPAYYADI/diff_drive_ws.git
+cd diff_drive_ws/
+rosdep install --from-paths src --ignore-src -r -y
+colcon build --symlink-install
+source install/setup.bash
+```
+
 ## How to Lauch
 
 - To start the simulation to visualize the robot in simulatio we can use following launch file
