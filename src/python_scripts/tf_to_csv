@@ -1,0 +1,18 @@
+import sqlite3
+import pandas as pd
+
+# Path to your ROS 2 bag directory
+bag_path = 'path_to_your_bag'
+db_path = f'{bag_path}/rosbag2_2020_0.db3'
+
+# Connect to SQLite database
+conn = sqlite3.connect(db_path)
+cursor = conn.cursor()
+
+# Query messages from /tf topic
+cursor.execute("SELECT timestamp, topic, data FROM messages WHERE topic = '/tf'")
+rows = cursor.fetchall()
+
+# Save to CSV
+df = pd.DataFrame(rows, columns=['timestamp', 'topic', 'data'])
+df.to_csv('tf_data.csv', index=False)

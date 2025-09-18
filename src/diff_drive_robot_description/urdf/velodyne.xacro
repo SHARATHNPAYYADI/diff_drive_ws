@@ -1,0 +1,82 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" >
+    <xacro:property name="lidar_radius" value="0.05" />
+    <xacro:property name="lidar_height" value="0.1" /> <!-- Velodyne body -->
+
+    <link name="lidar_link">
+        <visual>
+            <geometry>
+                <cylinder radius="${lidar_radius}" length="${lidar_height}" />
+            </geometry>
+            <material name="red" />
+        </visual>
+        <collision>
+            <geometry>
+                <cylinder radius="${lidar_radius}" length="${lidar_height}" />
+            </geometry>
+        </collision>
+        <xacro:cylinder_inertia m="0.5" r="${lidar_radius}" h="${lidar_height}" xyz="0 0 0"
+            rpy="0 0 0" />
+    </link> <!-- Fixed joint to base -->
+    <joint name="base_lidar_joint" type="fixed">
+        <parent link="base_link" />
+        <child link="lidar_link" />
+        <origin xyz="0 0 ${base_height + lidar_height/2.0}" rpy="0 0 0" />
+    </joint>
+
+    <gazebo reference="base">
+        <material>Gazebo/Red</material>
+    </gazebo>
+
+    <gazebo reference="lidar_link">
+        <material>Gazebo/Red</material>
+
+        <sensor type="ray" name="velodyne2-HDL32E">
+          <pose>0 0 0 0 0 0</pose>
+          <visualize>false</visualize>
+          <update_rate>10</update_rate>
+
+          <ray>
+                <scan>
+                    <horizontal>
+                        <samples>220</samples>
+                        <resolution>1</resolution>
+                        <min_angle>-3.142</min_angle>
+                        <max_angle>3.142</max_angle>
+                    </horizontal>
+                    <vertical>
+                        <samples>32</samples>
+                        <resolution>1</resolution>
+                        <min_angle>-0.535</min_angle>
+                        <max_angle> 0.186</max_angle>
+                    </vertical>
+                </scan>
+
+                <range>
+                    <min>0.3</min>
+                    <max>131.0</max>
+                    <resolution>0.001</resolution>
+                </range>
+
+                <noise>
+                    <type>gaussian</type>
+                    <mean>0.0</mean>
+                    <stddev>0.0</stddev>
+                </noise>
+          </ray>
+
+          <plugin name="gazebo_ros_laser_controller" filename="libgazebo_ros_ray_sensor.so">
+            <ros>
+              <argument>~/out:=scan</argument>
+            </ros>
+            <output_type>sensor_msgs/PointCloud</output_type>
+            <frame_name>lidar_link</frame_name>
+            <organize_cloud>false</organize_cloud>
+            <min_range>0.9</min_range>
+            <max_range>130.0</max_range>
+            <gaussian_noise>0.008</gaussian_noise>
+          </plugin>
+        </sensor>
+    </gazebo>
+
+</robot>
