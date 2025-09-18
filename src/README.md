@@ -38,8 +38,7 @@ Deliverables
 - Launch files: [Bringup launch file](https://github.com/SHARATHNPAYYADI/diff_drive_ws/blob/develop/src/diff_drive_bringup/launch/bringup.launch.py)
 
 - RViz screenshots: 
-
-    ![Rviz](/images/rviz_with_topic.png)
+    ![Rviz_screenshot](/images/rviz_with_topic.png)
 
 - TF Tree: [tf_tree](https://github.com/SHARATHNPAYYADI/diff_drive_ws/blob/develop/src/images/tf2_tree.pdf) 
 
